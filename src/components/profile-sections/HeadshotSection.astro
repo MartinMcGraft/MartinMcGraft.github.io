@@ -1,0 +1,32 @@
+---
+import { profile } from "../../data/profile";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<section
+  id="headshot-section"
+  class="flex items-center justify-center min-h-[34vh] pb-8 sm:min-h-[34vh] lg:min-h-0"
+>
+  <section
+    class="relative w-full max-w-[280px] [container-type:inline-size]"
+  >
+    <section
+      aria-label="Profile headshot"
+      class="aspect-[4/5] overflow-hidden rounded-lg bg-[var(--colour-slate)] shadow-[0_24px_60px_rgba(0,0,0,0.28)]"
+    >
+      <img
+        src={`${base}cv_pic.jpg`}
+        alt="Profile picture"
+        class="block h-full w-full object-cover"
+      />
+    </section>
+
+    <h1
+      id="introduction"
+      class="absolute bottom-0 left-1/2 z-10 w-max max-w-[100cqw] -translate-x-1/2 translate-y-1/2 whitespace-nowrap text-center text-[clamp(1.6rem,10cqw,4.5rem)] font-bold italic leading-none text-[var(--colour-cloud)]"
+    >
+      {profile.name}
+    </h1>
+  </section>
+</section>

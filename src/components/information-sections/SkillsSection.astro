@@ -1,0 +1,70 @@
+---
+import { SquareTerminal } from "@lucide/astro";
+import { skillIcons } from "../../data/skillIcons";
+import { skillLinks } from "../../data/skillLinks";
+import { skillGroups } from "../../data/skills";
+
+const tileClass =
+  "flex min-h-[7.25rem] flex-col items-center justify-start gap-3 rounded-lg text-center transition hover:text-[var(--colour-mist)]";
+const iconTileClass =
+  "grid size-16 place-items-center rounded-lg border border-[var(--colour-slate)] bg-[var(--colour-mist)] transition group-hover:border-[var(--colour-cloud)] group-hover:bg-[var(--colour-cloud)]";
+---
+
+<section
+  id="skills-section"
+  class="flex flex-col gap-6 py-10 sm:gap-8 lg:py-12"
+>
+  <section class="flex flex-col gap-3">
+    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--colour-mist)]">
+      Digital Skills
+    </p>
+    <h2 class="text-3xl font-bold leading-tight text-[var(--colour-cloud)] sm:text-4xl">
+      Technologies, tools, and languages.
+    </h2>
+  </section>
+
+  <section class="grid gap-4">
+    {skillGroups.map((group) => (
+      <article class="rounded-lg border border-[var(--colour-slate)] bg-[var(--colour-navy)] p-5 sm:p-6">
+        <h3 class="text-lg font-bold text-[var(--colour-cloud)]">{group.title}</h3>
+        <section class="mt-5 grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-6">
+          {group.skills.map((skill) => {
+            const icon = skillIcons[skill];
+            const href = skillLinks[skill];
+
+            return (
+              <a
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                class={`${tileClass} group`}
+                aria-label={`Open ${skill} website`}
+              >
+                <section class={iconTileClass}>
+                  {icon ? (
+                    <img
+                      src={icon}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      class="size-9 object-contain"
+                    />
+                  ) : (
+                    <SquareTerminal
+                      size={36}
+                      aria-hidden="true"
+                      class="text-[var(--colour-slate)]"
+                    />
+                  )}
+                </section>
+                <span class="max-w-full text-balance text-sm font-semibold leading-snug text-[var(--colour-cloud)] transition group-hover:text-[var(--colour-mist)]">
+                  {skill}
+                </span>
+              </a>
+            );
+          })}
+        </section>
+      </article>
+    ))}
+  </section>
+</section>

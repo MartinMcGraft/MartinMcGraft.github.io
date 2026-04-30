@@ -1,0 +1,17 @@
+---
+import { profile } from "../../data/profile";
+---
+
+<section
+  id="about-section"
+  class="flex flex-col"
+>
+  <section class="flex flex-col gap-3">
+    <h2 class="text-3xl font-bold leading-tight text-[var(--colour-cloud)] sm:text-4xl">
+      {profile.title}
+    </h2>
+    <h3>
+        {profile.summary}
+    </h3>
+  </section>
+</section>

@@ -1,0 +1,16 @@
+---
+import ContactsSection from "./profile-sections/ContactsSection.astro";
+import DownloadCVSection from "./profile-sections/DownloadCVSection.astro";
+import HeadshotSection from "./profile-sections/HeadshotSection.astro";
+import IntroductionSection from "./profile-sections/IntroductionSection.astro";
+---
+
+<section
+    id="profile-panel"
+    class="min-h-screen w-full bg-[var(--colour-ink)] px-4 py-8 text-[var(--colour-cloud)]"
+>
+    <HeadshotSection />
+    <IntroductionSection />
+    <ContactsSection />
+    <DownloadCVSection />
+</section>
