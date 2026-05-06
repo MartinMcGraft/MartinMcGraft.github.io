@@ -27,7 +27,7 @@ const base = import.meta.env.BASE_URL;
 		style={colourVariables}
 	>
 		<main class="flex min-h-screen w-full flex-col lg:h-screen lg:flex-row lg:overflow-hidden">
-			<aside class="w-full lg:h-screen lg:w-[38%] lg:max-w-[520px] lg:overflow-hidden">
+			<aside class="w-full lg:h-screen lg:w-[38%] lg:max-w-[520px] lg:overflow-y-auto lg:overflow-x-hidden">
 				<slot name="profile" />
 			</aside>
 
@@ -41,22 +41,67 @@ const base = import.meta.env.BASE_URL;
 <style is:global>
 	@import "tailwindcss";
 
-	:global(*) {
+	* {
 		box-sizing: border-box;
 	}
 
-	:global(html),
-	:global(body) {
+	html,
+	body {
 		margin: 0;
 		width: 100%;
 		min-height: 100%;
 	}
 
 	@media (width >= 64rem) {
-		:global(html),
-		:global(body) {
+		html,
+		body {
 			height: 100%;
 			overflow: hidden;
+		}
+	}
+
+	@media (width >= 64rem) and (height <= 56.25rem) {
+		#profile-panel {
+			padding-block: clamp(0.875rem, 2vh, 1.5rem);
+		}
+
+		#headshot-section {
+			padding-bottom: clamp(1.5rem, 4vh, 2rem);
+		}
+
+		#headshot-section > section {
+			max-width: clamp(10rem, 27vh, 17.5rem);
+		}
+
+		#introduction-section {
+			padding-bottom: clamp(0.875rem, 2vh, 1.5rem);
+		}
+
+		#introduction-section p {
+			font-size: clamp(1rem, 2.25vh, 1.25rem);
+			line-height: 1.45;
+		}
+
+		#contacts-section {
+			gap: clamp(0.375rem, 1vh, 0.5rem);
+			padding-bottom: clamp(0.875rem, 2vh, 1.5rem);
+		}
+
+		#contacts-section h2,
+		#resume-section h2 {
+			font-size: clamp(0.75rem, 1.65vh, 0.875rem);
+		}
+
+		#contacts-card,
+		#resume-section .grid {
+			gap: clamp(0.375rem, 1vh, 0.5rem);
+		}
+
+		#contacts-card > *,
+		#resume-section a {
+			min-height: clamp(2.35rem, 5.5vh, 3rem);
+			padding-block: clamp(0.45rem, 1vh, 0.75rem);
+			line-height: 1.35;
 		}
 	}
 </style>
