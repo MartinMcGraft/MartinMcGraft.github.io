@@ -2,7 +2,7 @@ export const projects = {
   defaultHref: "https://github.com/MartinMcGraft",
   title: "Projects",
   items: [
-    {
+    /*{
       name: "Minecraft Alpha Remake",
       href: "https://github.com/MartinMcGraft/MinecraftRemake",
       subtitle: "3D Game Engine in C++",
@@ -25,7 +25,7 @@ export const projects = {
         "The goal is to develop a small library with visual experiments that show how agents learn, accumulate rewards, and evaluate the utility of states in practice.",
       ],
       tags: ["Python", "PySide6", "Numpy"],
-    },
+    }*/,
     {
       name: "I-Crash",
       href: "https://github.com/MartinMcGraft/ICrash",
@@ -38,15 +38,15 @@ export const projects = {
       tags: ["Flutter", "Dart", "Django", "PostgreSQL", "REST APIs", "Helthcare", "Sustainability"],
     },
     {
-      name: "Machine Strike",
-      href: "https://github.com/MartinMcGraft/MachineStrike",
-      subtitle: "2D Strategy Game in Java",
+      name: "JobAgent",
+      href: "https://github.com/MartinMcGraft/JobAgent",
+      subtitle: "Job Search Automation Pipeline",
       details: [
-        "Adaptation of the Machine Strike mini-game featured in Horizon Forbidden West.",
-        "Rebuild of a first-year university project, focused on improving software engineering, object-oriented programming, and testing practices.",
-        "Developed as a Java desktop application with a modern graphical interface and a cleaner, more maintainable project structure.",
+        "Discovers jobs via REST APIs and web scraping across 6+ job boards; scores against personal preferences and maintains a deduplicated company registry.",
+        "Generates tailored CVs, emails, and cover letters in English and Portuguese for approved jobs; backs up drafts to Google Drive with draft management.",
+        "Built with Python, unit-tested (154+ tests), and uses Claude for content generation, workflow automation, and a live Job Search Pulse dashboard."
       ],
-      tags: ["Java", "JavaFX", "FXML", "XML", "JUnit", "MVC", "OOP"],
-    },
+      tags: ["Python", "REST APIs", "Web Scraping", "Unit Testing", "Git", "YAML", "Claude", "Automation"],
+    }
   ],
 };
