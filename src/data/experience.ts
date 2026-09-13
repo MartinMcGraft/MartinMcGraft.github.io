@@ -8,7 +8,7 @@ export const experience = {
       role: "Store Manager",
       location: "Lisbon, Portugal",
       details: [
-        "Own daily store operations end-to-end, including inventory control, stock replenishment, and workspace organisation.}",
+        "Own daily store operations end-to-end, including inventory control, stock replenishment, and workspace organisation.",
         "Manage customer service and sales, maintaining consistent standards in a fast-paced retail environment.",
       ],
     },
