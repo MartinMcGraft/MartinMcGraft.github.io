@@ -7,7 +7,9 @@ export const education = {
       period: "Sep. 2025 - Present",
       degree: "MSc in Informatics and Multimedia Engineering",
       location: "Lisbon, Portugal",
-      details: [],
+      details: [
+        "Final Degree Project: EcoConf - Academic Conference Management Platform with Sustainable Gamification."
+      ],
     },
     {
       institution: "Lisbon School of Engineering (ISEL)",
